@@ -7,3 +7,8 @@ a {
     text-decoration: none;
     color: black;
 }
+
+// the * is 'universal' -- all elements will have the box sizing = border-box
+* {
+    box-sizing: border-box;
+}
