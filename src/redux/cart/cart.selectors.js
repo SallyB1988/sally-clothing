@@ -11,6 +11,11 @@ export const selectCartItems = createSelector(
   (cart) => cart.cartItems    // runs this function on the array
 );
 
+export const selectCartHidden = createSelector(
+  [selectCart],
+  cart => cart.hidden
+)
+
 export const selectCartItemsCount = createSelector(
   [selectCartItems],    // this is cartItems
   cartItems =>
