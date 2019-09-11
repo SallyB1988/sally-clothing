@@ -26,6 +26,16 @@ export const selectCartItemsCount = createSelector(
     )
 )
 
+export const selectCartTotal = createSelector(
+  [selectCartItems],
+  cartItems =>
+    cartItems.reduce(
+      (total, cartItem) =>
+        (total + cartItem.quantity * cartItem.price),
+      0
+    )
+)
+
 // when calling selectCartItemsCount (as seen in cart-icon.jsx) it looks like:
 // selectCartItemsCount(state)
 //   this calls the selectCartItemsCount selector which calls the
