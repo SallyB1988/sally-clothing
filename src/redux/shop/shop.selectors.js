@@ -11,11 +11,12 @@ export const selectCollections = createSelector(
 // the data for hats, jackets, sneakers, womens, mens)
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],
-  collections => Object.keys(collections).map(key => collections[key])
+  collections => (collections ? Object.keys(collections).map(key => collections[key]) :
+    [])
 )
 
 export const selectCollection = (collectionUrlParam) =>
   createSelector(
     [selectCollections],
-    collections => collections[collectionUrlParam]
+    collections => (collections ? collections[collectionUrlParam] : null)
   )
